@@ -1018,15 +1018,41 @@
         </div>
     </nav>
 
-    <!-- Mobile Sidebar -->
-    <div class="mobile-sidebar" id="mobileSidebar">
-        <ul>
-            <li><a href="#home" onclick="closeSidebar()">Home</a></li>
-            <li><a href="#scripts" onclick="closeSidebar()">Scripts</a></li>
-            <li><a href="#features" onclick="closeSidebar()">Features</a></li>
-            <li><a href="#support" onclick="closeSidebar()">Support</a></li>
-        </ul>
-    </div>
+            <!-- Hamburger Dropdown Menu -->
+            <div class="hamburger-dropdown" id="hamburgerDropdown">
+                <a href="#home" class="dropdown-item">
+                    <i data-lucide="home"></i>
+                    <span>Home</span>
+                </a>
+
+                <a href="#scripts" class="dropdown-item">
+                    <i data-lucide="gamepad-2"></i>
+                    <span>Scripts</span>
+                </a>
+
+                <a href="#bundle" class="dropdown-item">
+                    <i data-lucide="gem"></i>
+                    <span>Bundle</span>
+                </a>
+
+                <a href="#support" class="dropdown-item">
+                    <i data-lucide="life-buoy"></i>
+                    <span>Support</span>
+                </a>
+            
+                <div class="dropdown-divider"></div>
+
+                <a href="https://whop.com/login" class="dropdown-item">
+                    <i data-lucide="log-in"></i>
+                    <span>Login</span>
+                </a>
+
+                   <a href="#" class="dropdown-item">
+                    <i data-lucide="message-circle"></i>
+                    <span>Community</span>
+                </a>
+            </div>
+
 
     <section class="hero" id="home">
         <div class="hero-bg" id="heroBg"></div>
