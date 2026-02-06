@@ -23,7 +23,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 20px 60px;
+            padding: 8px 60px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -36,7 +36,7 @@
             background: rgba(0, 0, 0, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 15px 60px;
+            padding: 6px 60px;
         }
 
         .logo-container {
@@ -46,17 +46,17 @@
         }
 
         .logo-img {
-            width: 40px;
-            height: 40px;
+            width: 24px;
+            height: 24px;
             object-fit: contain;
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 12px;
             font-weight: 900;
             color: #fff;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
 
         .nav-links {
@@ -144,49 +144,49 @@
             text-align: center;
             max-width: 900px;
             padding: 0 20px;
-            margin-top: -80px;
+            margin-top: -120px;
         }
 
         .hero-logo {
-            font-size: 58px;
+            font-size: 48px;
             font-weight: 900;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             text-transform: uppercase;
-            letter-spacing: 6px;
+            letter-spacing: 5px;
             text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
         }
 
         .hero-tagline {
-            font-size: 17px;
+            font-size: 15px;
             font-weight: 300;
-            margin-bottom: 28px;
+            margin-bottom: 22px;
             opacity: 0.9;
-            max-width: 550px;
+            max-width: 520px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.5;
+            line-height: 1.4;
         }
 
         .hero-cta-group {
             display: flex;
-            gap: 15px;
+            gap: 10px;
             justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
 
         .hero-btn {
             display: inline-block;
-            padding: 15px 45px;
+            padding: 10px 28px;
             background: #fff;
             color: #000;
             text-decoration: none;
-            border-radius: 30px;
+            border-radius: 22px;
             font-weight: 700;
-            font-size: 16px;
+            font-size: 13px;
             transition: all 0.3s;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
         .hero-btn:hover {
@@ -197,9 +197,9 @@
 
         .hero-btn .btn-subtitle {
             display: block;
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 500;
-            margin-top: 4px;
+            margin-top: 3px;
             opacity: 0.7;
             text-transform: lowercase;
         }
@@ -742,10 +742,117 @@
             transform: scale(1.2);
         }
 
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Mobile Sidebar */
+        .mobile-sidebar {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 70%;
+            max-width: 300px;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 999;
+            padding: 80px 30px 30px;
+            transition: right 0.3s;
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-sidebar.active {
+            right: 0;
+        }
+
+        .mobile-sidebar ul {
+            list-style: none;
+        }
+
+        .mobile-sidebar ul li {
+            margin-bottom: 25px;
+        }
+
+        .mobile-sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .mobile-sidebar ul li a:hover {
+            color: #d4af37;
+        }
+
+        /* Cart Button */
+        .cart-btn {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .cart-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .cart-icon {
+            font-size: 18px;
+        }
+
+        /* Nav Right Group */
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
         /* Mobile Responsive */
         @media (max-width: 1024px) {
             nav {
-                padding: 15px 20px;
+                padding: 6px 15px;
+            }
+
+            .hamburger {
+                display: flex;
             }
 
             .nav-links {
@@ -753,8 +860,8 @@
             }
 
             .nav-timer {
-                font-size: 11px;
-                padding: 8px 12px;
+                font-size: 10px;
+                padding: 6px 10px;
             }
 
             .hero-scripts-peek {
@@ -768,14 +875,15 @@
             .scripts-grid {
                 display: flex;
                 overflow-x: auto;
-                scroll-snap-type: x mandatory;
-                gap: 20px;
+                scroll-snap-type: x proximity;
+                gap: 15px;
                 padding-bottom: 20px;
                 -webkit-overflow-scrolling: touch;
+                scroll-padding-left: 20px;
             }
 
             .scripts-grid::-webkit-scrollbar {
-                height: 8px;
+                height: 6px;
             }
 
             .scripts-grid::-webkit-scrollbar-track {
@@ -789,17 +897,18 @@
             }
 
             .script-card {
-                min-width: 320px;
+                min-width: 280px;
                 scroll-snap-align: start;
+                flex-shrink: 0;
             }
 
             .hero-logo {
-                font-size: 42px;
-                letter-spacing: 4px;
+                font-size: 36px;
+                letter-spacing: 3px;
             }
 
             .hero-tagline {
-                font-size: 16px;
+                font-size: 14px;
             }
 
             .section-title {
@@ -822,12 +931,16 @@
 
         @media (max-width: 480px) {
             .script-card {
-                min-width: 280px;
+                min-width: 260px;
             }
 
             .hero-logo {
-                font-size: 32px;
+                font-size: 28px;
                 letter-spacing: 2px;
+            }
+
+            .hero-tagline {
+                font-size: 13px;
             }
 
             .section-title {
@@ -853,10 +966,31 @@
             <li><a href="#features">Features</a></li>
             <li><a href="#support">Support</a></li>
         </ul>
-        <div class="nav-timer" id="navTimer">
-            🔥 EXCLUSIVE SALE ENDS IN: <span class="timer-numbers" id="navTimerDisplay">--H --M --S</span>
+        <div class="nav-right">
+            <div class="nav-timer" id="navTimer">
+                🔥 EXCLUSIVE SALE ENDS IN: <span class="timer-numbers" id="navTimerDisplay">--H --M --S</span>
+            </div>
+            <a href="#" class="cart-btn">
+                <span class="cart-icon">🛒</span>
+                <span>Cart</span>
+            </a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
+
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <ul>
+            <li><a href="#home" onclick="closeSidebar()">Home</a></li>
+            <li><a href="#scripts" onclick="closeSidebar()">Scripts</a></li>
+            <li><a href="#features" onclick="closeSidebar()">Features</a></li>
+            <li><a href="#support" onclick="closeSidebar()">Support</a></li>
+        </ul>
+    </div>
 
     <section class="hero" id="home">
         <div class="hero-bg" id="heroBg"></div>
@@ -1237,6 +1371,27 @@
             box.style.transform = 'translateY(30px)';
             box.style.transition = `all 0.6s ease ${index * 0.1}s`;
             observer.observe(box);
+        });
+
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const mobileSidebar = document.getElementById('mobileSidebar');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileSidebar.classList.toggle('active');
+        });
+
+        function closeSidebar() {
+            hamburger.classList.remove('active');
+            mobileSidebar.classList.remove('active');
+        }
+
+        // Close sidebar when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !mobileSidebar.contains(e.target)) {
+                closeSidebar();
+            }
         });
     </script>
 </body>
