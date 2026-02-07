@@ -752,9 +752,8 @@
         }
 
         .hamburger span {
-            width: 22px;
-            height: 2px;
-            background: rgba(255,255,255,0.85);
+            width: 25px;
+            height: 3px;
             background: #fff;
             border-radius: 2px;
             transition: all 0.3s;
@@ -772,110 +771,46 @@
             transform: rotate(-45deg) translate(7px, -7px);
         }
 
-        /* Mobile Dropdown Menu */
-        .mobile-dropdown {
+        /* Mobile Sidebar */
+        .mobile-sidebar {
             position: fixed;
-            top: -500px;
-            left: 0;
-            right: 0;
-            background: rgba(245, 248, 255, 0.95);
-            backdrop-filter: blur(16px);
-            border-left: 1px solid rgba(255, 255, 255, 0.35);
-            z-index: 999;
-            padding: 70px 30px 25px;
-            transition: top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-            border-bottom: 2px solid rgba(180, 190, 210, 0.3);
-        }
-        .mobile-dropdown {
-            position: fixed;
-            top: 20px;
+            top: 0;
             right: -100%;
-            left: auto;
-            width: 55%;
-            max-width: 320px;
-            height: auto;
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(14px);
-            border-radius: 20px 0 0 20px;
-            padding: 30px 25px;
-            transition: right 0.35s ease;
-            z-index: 1001;
-
+            width: 70%;
+            max-width: 300px;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 999;
+            padding: 80px 30px 30px;
+            transition: right 0.3s;
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .mobile-dropdown.active {
+        .mobile-sidebar.active {
             right: 0;
         }
 
-        .mobile-dropdown ul {
+        .mobile-sidebar ul {
             list-style: none;
-            max-width: 400px;
-            margin: 0 auto;
         }
 
-        .mobile-dropdown ul li {
-            margin-bottom: 0;
-            border-bottom: 1px solid rgba(180, 190, 210, 0.2);
+        .mobile-sidebar ul li {
+            margin-bottom: 25px;
         }
 
-        .mobile-dropdown ul li:last-child {
-            border-bottom: none;
-        }
-
-        .mobile-dropdown ul li a {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 16px 10px;
-            color: #2c3e50;
+        .mobile-sidebar ul li a {
+            color: #fff;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 600;
-            letter-spacing: 0.3px;
-            transition: all 0.3s;
-        }
-
-        .mobile-dropdown ul li a:hover {
-            color: #34495e;
-            background: rgba(180, 190, 210, 0.15);
-            padding-left: 15px;
-        }
-
-        .menu-icon {
-            font-size: 20px;
-            width: 28px;
-            text-align: center;
-        }
-
-        .discord-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
-            padding: 14px 25px;
-            background: linear-gradient(135deg, #7289da, #5865f2);
-            color: #fff !important;
-            text-decoration: none;
-            border-radius: 12px;
-            font-size: 15px;
-            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(114, 137, 218, 0.3);
+            letter-spacing: 1px;
+            transition: color 0.3s;
         }
 
-        .discord-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(114, 137, 218, 0.4);
-            background: linear-gradient(135deg, #5865f2, #7289da);
-            padding-left: 25px !important;
-        }
-
-        .discord-icon {
-            font-size: 22px;
+        .mobile-sidebar ul li a:hover {
+            color: #d4af37;
         }
 
         /* Cart Button */
@@ -1095,38 +1030,14 @@
         </div>
     </nav>
 
-    <!-- Mobile Dropdown Menu -->
-    <div class="mobile-dropdown" id="mobileDropdown">
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar" id="mobileSidebar">
         <ul>
-            <li>
-                <a href="#home" onclick="closeDropdown()">
-                    <span class="menu-icon">🏠</span>
-                    <span>Home</span>
-                </a>
-            </li>
-            <li>
-                <a href="#scripts" onclick="closeDropdown()">
-                    <span class="menu-icon">📜</span>
-                    <span>Scripts</span>
-                </a>
-            </li>
-            <li>
-                <a href="#features" onclick="closeDropdown()">
-                    <span class="menu-icon">⚡</span>
-                    <span>Features</span>
-                </a>
-            </li>
-            <li>
-                <a href="#support" onclick="closeDropdown()">
-                    <span class="menu-icon">💬</span>
-                    <span>Support</span>
-                </a>
-            </li>
+            <li><a href="#home" onclick="closeSidebar()">Home</a></li>
+            <li><a href="#scripts" onclick="closeSidebar()">Scripts</a></li>
+            <li><a href="#features" onclick="closeSidebar()">Features</a></li>
+            <li><a href="#support" onclick="closeSidebar()">Support</a></li>
         </ul>
-        <a href="https://whop.com/your-discord-link" class="discord-btn">
-            <span class="discord-icon">💬</span>
-            <span>Join Discord</span>
-        </a>
     </div>
 
     <section class="hero" id="home">
@@ -1512,35 +1423,24 @@
             observer.observe(box);
         });
 
-        // Hamburger Dropdown Toggle
+        // Hamburger Menu Toggle
         const hamburger = document.getElementById('hamburger');
-        const mobileDropdown = document.getElementById('mobileDropdown');
+        const mobileSidebar = document.getElementById('mobileSidebar');
 
-        hamburger.addEventListener('click', (e) => {
-            e.stopPropagation();
+        hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
-            mobileDropdown.classList.toggle('active');
+            mobileSidebar.classList.toggle('active');
         });
 
-        function closeDropdown() {
+        function closeSidebar() {
             hamburger.classList.remove('active');
-            mobileDropdown.classList.remove('active');
+            mobileSidebar.classList.remove('active');
         }
 
-        // Close dropdown when clicking outside
+        // Close sidebar when clicking outside
         document.addEventListener('click', (e) => {
-            if (!hamburger.contains(e.target) && !mobileDropdown.contains(e.target)) {
-                closeDropdown();
-            }
-        });
-
-        // Close dropdown on scroll
-        let lastScroll = 0;
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            if (Math.abs(currentScroll - lastScroll) > 50) {
-                closeDropdown();
-                lastScroll = currentScroll;
+            if (!hamburger.contains(e.target) && !mobileSidebar.contains(e.target)) {
+                closeSidebar();
             }
         });
     </script>
