@@ -772,69 +772,150 @@
             transform: rotate(-45deg) translate(7px, -7px);
         }
 
+        /* Mobile Dropdown Menu */
+        .mobile-dropdown {
+            position: fixed;
+            top: -500px;
+            left: 0;
+            right: 0;
+            background: rgba(245, 248, 255, 0.95);
+            backdrop-filter: blur(16px);
+            border-left: 1px solid rgba(255, 255, 255, 0.35);
+            z-index: 999;
+            padding: 70px 30px 25px;
+            transition: top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            border-bottom: 2px solid rgba(180, 190, 210, 0.3);
+        }
+        .mobile-dropdown {
+            position: fixed;
+            top: 20px;
+            right: -100%;
+            left: auto;
+            width: 55%;
+            max-width: 320px;
+            height: auto;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(14px);
+            border-radius: 20px 0 0 20px;
+            padding: 30px 25px;
+            transition: right 0.35s ease;
+            z-index: 1001;
 
+        }
+
+        .mobile-dropdown.active {
+            right: 0;
+        }
+
+        .mobile-dropdown ul {
+            list-style: none;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .mobile-dropdown ul li {
+            margin-bottom: 0;
+            border-bottom: 1px solid rgba(180, 190, 210, 0.2);
+        }
+
+        .mobile-dropdown ul li:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-dropdown ul li a {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 16px 10px;
+            color: #2c3e50;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            transition: all 0.3s;
+        }
+
+        .mobile-dropdown ul li a:hover {
+            color: #34495e;
+            background: rgba(180, 190, 210, 0.15);
+            padding-left: 15px;
+        }
+
+        .menu-icon {
+            font-size: 20px;
+            width: 28px;
+            text-align: center;
+        }
+
+        .discord-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+            padding: 14px 25px;
+            background: linear-gradient(135deg, #7289da, #5865f2);
+            color: #fff !important;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(114, 137, 218, 0.3);
+        }
+
+        .discord-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(114, 137, 218, 0.4);
+            background: linear-gradient(135deg, #5865f2, #7289da);
+            padding-left: 25px !important;
+        }
+
+        .discord-icon {
+            font-size: 22px;
+        }
+
+        /* Cart Button */
+        .cart-btn {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .cart-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .cart-icon {
+            font-size: 18px;
+        }
+
+        /* Nav Right Group */
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
         /* Mobile Responsive */
         @media (max-width: 1024px) {
             nav {
                 padding: 10px 20px;
             }
-            .mobile-dropdown {
-                position: fixed;
-                top: 10px;
-                right: -100%;
-                width: 62%;
-                max-width: 340px;
-                background: rgba(245, 248, 255, 0.96);
-                backdrop-filter: blur(18px);
-                border-radius: 10px 0 0 10px;
-                padding: 20px 18px;
-                transition: right 0.28s ease;
-                z-index: 1001;
-              }
-            
-            .mobile-dropdown.active {
-                right: 0;
-              }
-            
-            .mobile-dropdown ul {
-                list-style: none;
-                margin: 0;
-                padding: 0;
-              }
-            
-            .mobile-dropdown li {
-                border-bottom: 1px solid rgba(180,190,210,0.25);
-              }
-            
-            .mobile-dropdown li:last-child {
-                border-bottom: none;
-              }
-            
-            .mobile-dropdown li a {
-                display: flex;
-                align-items: center;
-                gap: 12px;
-                padding: 10px 4px;
-                font-size: 14px;
-                font-weight: 600;
-                color: #2b2f38;
-                text-decoration: none;
-              }
-            
-            .mobile-dropdown li a svg {
-                width: 17px;
-                height: 17px;
-                stroke: #5a647a;
-                fill: none;
-                stroke-width: 1.6;
-                flex-shrink: 0;
-              }
-            
-            .mobile-dropdown li a:hover {
-                background: rgba(180,190,210,0.15);
-                padding-left: 8px;
-              }
+
             .hamburger {
                 display: flex;
             }
@@ -843,7 +924,6 @@
                 display: none;
             }
 
-             
             .nav-timer {
                   font-size: 8px;
                   padding: 8px 16px;
@@ -978,7 +1058,6 @@
             }
             .section-title {
                 font-size: 24px;
-                
             }
         }
 
@@ -1016,29 +1095,39 @@
         </div>
     </nav>
 
-            <div class="mobile-dropdown" id="mobileDropdown">
-              <ul>
-                <li>
-                  <a href="#">
-                    <svg viewBox="0 0 24 24"><path d="M3 10.5L12 3l9 7.5V21"/></svg>
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/></svg>
-                    Scripts
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg>
-                    Support
-                  </a>
-                </li>
-              </ul>
-            </div>
-
+    <!-- Mobile Dropdown Menu -->
+    <div class="mobile-dropdown" id="mobileDropdown">
+        <ul>
+            <li>
+                <a href="#home" onclick="closeDropdown()">
+                    <span class="menu-icon">🏠</span>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="#scripts" onclick="closeDropdown()">
+                    <span class="menu-icon">📜</span>
+                    <span>Scripts</span>
+                </a>
+            </li>
+            <li>
+                <a href="#features" onclick="closeDropdown()">
+                    <span class="menu-icon">⚡</span>
+                    <span>Features</span>
+                </a>
+            </li>
+            <li>
+                <a href="#support" onclick="closeDropdown()">
+                    <span class="menu-icon">💬</span>
+                    <span>Support</span>
+                </a>
+            </li>
+        </ul>
+        <a href="https://whop.com/your-discord-link" class="discord-btn">
+            <span class="discord-icon">💬</span>
+            <span>Join Discord</span>
+        </a>
+    </div>
 
     <section class="hero" id="home">
         <div class="hero-bg" id="heroBg"></div>
