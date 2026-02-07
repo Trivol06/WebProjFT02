@@ -786,18 +786,25 @@
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
             border-bottom: 2px solid rgba(180, 190, 210, 0.3);
         }
-       .mobile-sidebar {
+        .mobile-dropdown {
+            position: fixed;
             top: 70px;
             right: -100%;
+            left: auto;
             width: 55%;
+            max-width: 320px;
             height: auto;
-            max-height: 60vh;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(14px);
             border-radius: 20px 0 0 20px;
-            padding: 30px;
+            padding: 30px 25px;
+            transition: right 0.35s ease;
+            z-index: 999;
+
         }
 
         .mobile-dropdown.active {
-            top: 0;
+            right: 0;
         }
 
         .mobile-dropdown ul {
