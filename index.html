@@ -979,7 +979,13 @@
                 margin-top: 10px;
                 gap: 6px;
             }
-
+         .script-card {
+                scroll-snap-align: center;   /* was start */
+                transition: all 0.35s ease;  /* faster */
+            }
+        .scripts-grid {
+                scroll-snap-type: x proximity; /* softer than mandatory */
+            }
             .hero-logo {
                 font-size: 32px;
                 letter-spacing: 2px;
