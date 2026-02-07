@@ -772,83 +772,6 @@
             transform: rotate(-45deg) translate(7px, -7px);
         }
 
-       /* MOBILE DROPDOWN MENU — CLEAN, SAFE VERSION */
-.mobile-dropdown {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 60%;
-  max-width: 360px;
-  background: rgba(245, 248, 255, 0.95);
-  backdrop-filter: blur(16px);
-  border-radius: 14px 0 0 14px;
-  padding: 24px 22px;
-  transition: right 0.3s ease;
-  z-index: 1001;
-}
-
-.mobile-dropdown.active {
-  right: 0;
-}
-
-/* RESET LIST */
-.mobile-dropdown ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* MENU ITEMS */
-.mobile-dropdown li {
-  border-bottom: 1px solid rgba(180, 190, 210, 0.25);
-}
-
-.mobile-dropdown li:last-child {
-  border-bottom: none;
-}
-
-.mobile-dropdown li a {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 12px 6px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #2b2f38;
-  text-decoration: none;
-}
-
-/* SVG ICONS */
-.mobile-dropdown li a svg {
-  width: 18px;
-  height: 18px;
-  stroke: #5a647a;
-  fill: none;
-  stroke-width: 1.6;
-  flex-shrink: 0;
-}
-
-/* HOVER (SUBTLE) */
-.mobile-dropdown li a:hover {
-  background: rgba(180, 190, 210, 0.15);
-  padding-left: 10px;
-}
-
-/* SECTION LABEL */
-.mobile-dropdown .menu-label {
-  font-size: 11px;
-  letter-spacing: 1px;
-  font-weight: 700;
-  color: rgba(90, 100, 120, 0.7);
-  margin: 6px 0 10px;
-}
-
-/* DIVIDER */
-.mobile-dropdown .menu-divider {
-  height: 1px;
-  background: rgba(180, 190, 210, 0.3);
-  margin: 10px 0;
-}
 
 
         /* Mobile Responsive */
@@ -856,7 +779,62 @@
             nav {
                 padding: 10px 20px;
             }
-
+            .mobile-dropdown {
+                position: fixed;
+                top: 10px;
+                right: -100%;
+                width: 62%;
+                max-width: 340px;
+                background: rgba(245, 248, 255, 0.96);
+                backdrop-filter: blur(18px);
+                border-radius: 10px 0 0 10px;
+                padding: 20px 18px;
+                transition: right 0.28s ease;
+                z-index: 1001;
+              }
+            
+            .mobile-dropdown.active {
+                right: 0;
+              }
+            
+            .mobile-dropdown ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+              }
+            
+            .mobile-dropdown li {
+                border-bottom: 1px solid rgba(180,190,210,0.25);
+              }
+            
+            .mobile-dropdown li:last-child {
+                border-bottom: none;
+              }
+            
+            .mobile-dropdown li a {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                padding: 10px 4px;
+                font-size: 14px;
+                font-weight: 600;
+                color: #2b2f38;
+                text-decoration: none;
+              }
+            
+            .mobile-dropdown li a svg {
+                width: 17px;
+                height: 17px;
+                stroke: #5a647a;
+                fill: none;
+                stroke-width: 1.6;
+                flex-shrink: 0;
+              }
+            
+            .mobile-dropdown li a:hover {
+                background: rgba(180,190,210,0.15);
+                padding-left: 8px;
+              }
             .hamburger {
                 display: flex;
             }
@@ -865,61 +843,7 @@
                 display: none;
             }
 
-              .mobile-dropdown {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 60%;
-    max-width: 360px;
-    background: rgba(245, 248, 255, 0.95);
-    backdrop-filter: blur(16px);
-    border-radius: 14px 0 0 14px;
-    padding: 24px 22px;
-    transition: right 0.3s ease;
-    z-index: 1001;
-  }
-
-  .mobile-dropdown.active {
-    right: 0;
-  }
-
-  .mobile-dropdown ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .mobile-dropdown li {
-    border-bottom: 1px solid rgba(180,190,210,0.25);
-  }
-
-  .mobile-dropdown li:last-child {
-    border-bottom: none;
-  }
-
-  .mobile-dropdown a {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 12px 6px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #2b2f38;
-    text-decoration: none;
-  }
-
-  .mobile-dropdown a svg {
-    width: 18px;
-    height: 18px;
-    stroke: #5a647a;
-    fill: none;
-    stroke-width: 1.6;
-  }
-
-  .mobile-dropdown a:hover {
-    background: rgba(180,190,210,0.15);
-    padding-left: 10px;
-  }
+             
             .nav-timer {
                   font-size: 8px;
                   padding: 8px 16px;
@@ -1092,40 +1016,29 @@
         </div>
     </nav>
 
-    <!-- Mobile Dropdown Menu -->
-    <div class="mobile-dropdown" id="mobileDropdown">
-<ul>
-  <li>
-    <a href="#home" onclick="closeDropdown()">
-      <svg viewBox="0 0 24 24"><path d="M3 10.5L12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
-      Home
-    </a>
-  </li>
-  <li>
-    <a href="#scripts" onclick="closeDropdown()">
-      <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/></svg>
-      Scripts
-    </a>
-  </li>
-  <li>
-    <a href="#features" onclick="closeDropdown()">
-      <svg viewBox="0 0 24 24"><path d="M12 2v20"/></svg>
-      Features
-    </a>
-  </li>
-  <li>
-    <a href="#support" onclick="closeDropdown()">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg>
-      Support
-    </a>
-  </li>
-</ul>
+            <div class="mobile-dropdown" id="mobileDropdown">
+              <ul>
+                <li>
+                  <a href="#">
+                    <svg viewBox="0 0 24 24"><path d="M3 10.5L12 3l9 7.5V21"/></svg>
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/></svg>
+                    Scripts
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg>
+                    Support
+                  </a>
+                </li>
+              </ul>
+            </div>
 
-        <a href="https://whop.com/your-discord-link" class="discord-btn">
-            <span class="discord-icon">💬</span>
-            <span>Join Discord</span>
-        </a>
-    </div>
 
     <section class="hero" id="home">
         <div class="hero-bg" id="heroBg"></div>
