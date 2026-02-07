@@ -28,16 +28,10 @@
             justify-content: space-between;
             align-items: center;
             background: transparent;
-            z-index: 1000;
+            z-index: 100000;
             transition: all 0.3s;
         }
 
-        nav.scrolled {
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 10px 60px;
-        }
 
         .logo-container {
             display: flex;
@@ -1385,11 +1379,11 @@
             heroBg.style.transform = `translateY(${scrolled * 0.5}px)`;
             
             // Navbar background on scroll
-            if (scrolled > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+           // if (scrolled > 50) {
+          //      navbar.classList.add('scrolled');
+          //  } else {
+          //      navbar.classList.remove('scrolled');
+          //  }
         });
 
         // 23-Hour Timer with 1-hour rest at 8AM
