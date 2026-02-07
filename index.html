@@ -23,7 +23,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 12px 60px;
+            padding: 8px 60px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -36,7 +36,7 @@
             background: rgba(0, 0, 0, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 10px 60px;
+            padding: 6px 60px;
         }
 
         .logo-container {
@@ -46,17 +46,17 @@
         }
 
         .logo-img {
-            width: 40px;
-            height: 40px;
+            width: 24px;
+            height: 24px;
             object-fit: contain;
         }
 
         .logo {
-            font-size: 18px;
+            font-size: 12px;
             font-weight: 900;
             color: #fff;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
         }
 
         .nav-links {
@@ -144,49 +144,49 @@
             text-align: center;
             max-width: 900px;
             padding: 0 20px;
-            transform: translateY(-120px);
+            margin-top: -120px;
         }
 
         .hero-logo {
-            font-size: 58px;
+            font-size: 48px;
             font-weight: 900;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             text-transform: uppercase;
-            letter-spacing: 6px;
+            letter-spacing: 5px;
             text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
         }
 
         .hero-tagline {
-            font-size: 17px;
+            font-size: 15px;
             font-weight: 300;
-            margin-bottom: 28px;
+            margin-bottom: 22px;
             opacity: 0.9;
-            max-width: 550px;
+            max-width: 520px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.5;
+            line-height: 1.4;
         }
 
         .hero-cta-group {
             display: flex;
-            gap: 12px;
+            gap: 10px;
             justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .hero-btn {
             display: inline-block;
-            padding: 12px 32px;
+            padding: 10px 28px;
             background: #fff;
             color: #000;
             text-decoration: none;
-            border-radius: 25px;
+            border-radius: 22px;
             font-weight: 700;
-            font-size: 14px;
+            font-size: 13px;
             transition: all 0.3s;
             text-transform: uppercase;
-            letter-spacing: 0.8px;
+            letter-spacing: 0.5px;
         }
 
         .hero-btn:hover {
@@ -197,9 +197,9 @@
 
         .hero-btn .btn-subtitle {
             display: block;
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 500;
-            margin-top: 4px;
+            margin-top: 3px;
             opacity: 0.7;
             text-transform: lowercase;
         }
@@ -848,61 +848,20 @@
         /* Mobile Responsive */
         @media (max-width: 1024px) {
             nav {
-                padding: 10px 20px;
-            }
-
-            .logo-img {
-                width: 60px;
-                height: 60px;
-            }
-            .nav-timer {
-                font-size: 11px;
-                padding: 6px 10px;
-                background: rgba(255, 255, 255, 0.08);
-                color: #e6e6e6;
-                border: 1px solid rgba(255, 255, 255, 0.12);
-                border-radius: 10px;
-            }
-            .nav-timer .timer-numbers {
-                font-weight: 600;
-                color: #ffffff;
-            }
-
-            .cart-btn {
-                padding: 6px 10px;
-                font-size: 12px;
-                border-radius: 16px;
-            }
-
-            .cart-icon {
-                font-size: 16px;
-            }
-
-            nav {
-                padding: 8px 16px;
-            }
-
-            .logo {
-                display: none;
+                padding: 6px 15px;
             }
 
             .hamburger {
                 display: flex;
             }
-            
-            
-            .hero-content {
-                margin-top: 30px;
-            }
-
 
             .nav-links {
                 display: none;
             }
 
             .nav-timer {
-                font-size: 11px;
-                padding: 8px 12px;
+                font-size: 10px;
+                padding: 6px 10px;
             }
 
             .hero-scripts-peek {
@@ -916,14 +875,15 @@
             .scripts-grid {
                 display: flex;
                 overflow-x: auto;
-                scroll-snap-type: x mandatory;
-                gap: 20px;
+                scroll-snap-type: x proximity;
+                gap: 15px;
                 padding-bottom: 20px;
                 -webkit-overflow-scrolling: touch;
+                scroll-padding-left: 20px;
             }
 
             .scripts-grid::-webkit-scrollbar {
-                height: 8px;
+                height: 6px;
             }
 
             .scripts-grid::-webkit-scrollbar-track {
@@ -937,17 +897,18 @@
             }
 
             .script-card {
-                min-width: 320px;
+                min-width: 280px;
                 scroll-snap-align: start;
+                flex-shrink: 0;
             }
 
             .hero-logo {
-                font-size: 42px;
-                letter-spacing: 4px;
+                font-size: 36px;
+                letter-spacing: 3px;
             }
 
             .hero-tagline {
-                font-size: 16px;
+                font-size: 14px;
             }
 
             .section-title {
@@ -966,17 +927,20 @@
             .video-section, .features-section {
                 padding: 60px 20px;
             }
-            
         }
 
         @media (max-width: 480px) {
             .script-card {
-                min-width: 280px;
+                min-width: 260px;
             }
 
             .hero-logo {
-                font-size: 32px;
+                font-size: 28px;
                 letter-spacing: 2px;
+            }
+
+            .hero-tagline {
+                font-size: 13px;
             }
 
             .section-title {
@@ -1018,41 +982,15 @@
         </div>
     </nav>
 
-            <!-- Hamburger Dropdown Menu -->
-            <div class="hamburger-dropdown" id="hamburgerDropdown">
-                <a href="#home" class="dropdown-item">
-                    <i data-lucide="home"></i>
-                    <span>Home</span>
-                </a>
-
-                <a href="#scripts" class="dropdown-item">
-                    <i data-lucide="gamepad-2"></i>
-                    <span>Scripts</span>
-                </a>
-
-                <a href="#bundle" class="dropdown-item">
-                    <i data-lucide="gem"></i>
-                    <span>Bundle</span>
-                </a>
-
-                <a href="#support" class="dropdown-item">
-                    <i data-lucide="life-buoy"></i>
-                    <span>Support</span>
-                </a>
-            
-                <div class="dropdown-divider"></div>
-
-                <a href="https://whop.com/login" class="dropdown-item">
-                    <i data-lucide="log-in"></i>
-                    <span>Login</span>
-                </a>
-
-                   <a href="#" class="dropdown-item">
-                    <i data-lucide="message-circle"></i>
-                    <span>Community</span>
-                </a>
-            </div>
-
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <ul>
+            <li><a href="#home" onclick="closeSidebar()">Home</a></li>
+            <li><a href="#scripts" onclick="closeSidebar()">Scripts</a></li>
+            <li><a href="#features" onclick="closeSidebar()">Features</a></li>
+            <li><a href="#support" onclick="closeSidebar()">Support</a></li>
+        </ul>
+    </div>
 
     <section class="hero" id="home">
         <div class="hero-bg" id="heroBg"></div>
