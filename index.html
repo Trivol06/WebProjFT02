@@ -758,6 +758,10 @@
             border-radius: 2px;
             transition: all 0.3s;
         }
+        .hamburger.active span {
+            background: #000;
+        }
+
 
         .hamburger.active span:nth-child(1) {
             transform: rotate(45deg) translate(7px, 7px);
@@ -771,24 +775,37 @@
             transform: rotate(-45deg) translate(7px, -7px);
         }
 
-        /* Mobile Sidebar */
+        /* Mobile Dropdown Menu - ScriptProj Style */
         .mobile-sidebar {
             position: fixed;
-            top: 0;
-            right: -100%;
-            width: 70%;
-            max-width: 300px;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.98);
-            backdrop-filter: blur(10px);
+            top: 20px;
+            right: -320px;
+            width: 280px;
+            background: #fff;
+            border-left: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: -2px 0 20px rgba(0, 0, 0, 0.08);
             z-index: 999;
-            padding: 80px 30px 30px;
-            transition: right 0.3s;
-            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            max-height: calc(100vh - 60px);
+            overflow-y: auto;
+            padding: 20px 0;
         }
 
         .mobile-sidebar.active {
             right: 0;
+        }
+
+        .menu-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #999;
+            padding: 20px 20px 10px;
+            text-transform: uppercase;
+        }
+
+        .menu-label:first-child {
+            padding-top: 0;
         }
 
         .mobile-sidebar ul {
@@ -796,21 +813,65 @@
         }
 
         .mobile-sidebar ul li {
-            margin-bottom: 25px;
+            margin-bottom: 0;
         }
 
-        .mobile-sidebar ul li a {
-            color: #fff;
+        .mobile-sidebar ul li a,
+        .mobile-sidebar a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 20px;
+            color: #111;
             text-decoration: none;
-            font-size: 18px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+            text-transform: none;
+            letter-spacing: 0;
         }
 
-        .mobile-sidebar ul li a:hover {
-            color: #d4af37;
+        .mobile-sidebar ul li a:hover,
+        .mobile-sidebar a:hover {
+            background: rgba(0, 0, 0, 0.04);
+            padding-left: 24px;
+            color: #111;
+        }
+
+        .mobile-sidebar svg {
+            width: 18px;
+            height: 18px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+        }
+
+        .menu-divider {
+            height: 1px;
+            background: rgba(0, 0, 0, 0.08);
+            margin: 15px 20px;
+        }
+
+        /* Menu Overlay */
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 998;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .menu-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
         }
 
         /* Cart Button */
@@ -1030,15 +1091,48 @@
         </div>
     </nav>
 
-    <!-- Mobile Sidebar -->
+    <!-- Mobile Sidebar - ScriptProj Style -->
     <div class="mobile-sidebar" id="mobileSidebar">
-        <ul>
-            <li><a href="#home" onclick="closeSidebar()">Home</a></li>
-            <li><a href="#scripts" onclick="closeSidebar()">Scripts</a></li>
-            <li><a href="#features" onclick="closeSidebar()">Features</a></li>
-            <li><a href="#support" onclick="closeSidebar()">Support</a></li>
-        </ul>
+        <div class="menu-label">MENU</div>
+        
+        <a href="#home" onclick="closeSidebar()">
+            <svg viewBox="0 0 24 24"><path d="M3 10.5L12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
+            Home
+        </a>
+        
+        <a href="#scripts" onclick="closeSidebar()">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 4v16M16 4v16"/></svg>
+            Scripts
+        </a>
+        
+        <a href="#bundle" onclick="closeSidebar()">
+            <svg viewBox="0 0 24 24"><path d="M6 6h15l-2 9H8L6 6z"/><path d="M6 6H3"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg>
+            Bundle Deal
+        </a>
+        
+        <a href="#features" onclick="closeSidebar()">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg>
+            Features
+        </a>
+        
+        <div class="menu-divider"></div>
+        
+        <a href="#support" onclick="closeSidebar()">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 5 0c0 2-2.5 2-2.5 4"/><circle cx="12" cy="17" r="0.5"/></svg>
+            Support
+        </a>
+        
+        <div class="menu-divider"></div>
+        
+        <div class="menu-label">COMMUNITY</div>
+        
+        <a href="#" onclick="closeSidebar()">
+            <svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
+            Join Discord
+        </a>
     </div>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
 
     <section class="hero" id="home">
         <div class="hero-bg" id="heroBg"></div>
@@ -1423,19 +1517,26 @@
             observer.observe(box);
         });
 
-        // Hamburger Menu Toggle
+        // Hamburger Menu Toggle - ScriptProj Style
         const hamburger = document.getElementById('hamburger');
         const mobileSidebar = document.getElementById('mobileSidebar');
+        const menuOverlay = document.getElementById('menuOverlay');
 
-        hamburger.addEventListener('click', () => {
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
             hamburger.classList.toggle('active');
             mobileSidebar.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
         });
 
         function closeSidebar() {
             hamburger.classList.remove('active');
             mobileSidebar.classList.remove('active');
+            menuOverlay.classList.remove('active');
         }
+
+        // Close sidebar when clicking overlay
+        menuOverlay.addEventListener('click', closeSidebar);
 
         // Close sidebar when clicking outside
         document.addEventListener('click', (e) => {
