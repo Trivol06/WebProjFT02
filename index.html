@@ -606,22 +606,6 @@
             letter-spacing: 1px;
         }
 
-         .video-placeholder.triple {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            padding: 10px;
-            aspect-ratio: 16/9;
-        }
-        
-        .video-placeholder.triple img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-
-
         /* Features Section */
         .features-section {
             padding: 80px 60px;
@@ -1283,21 +1267,30 @@
     </section>
 
     <!-- Video Section -->
-    <section class="video-section">
-        <div class="section-header">
-            <h2 class="section-title">See It In Action</h2>
-            <p class="section-subtitle">Testimonials & tutorials from our community</p>
+<section class="video-section">
+    <div class="section-header">
+        <h2 class="section-title">See It In Action</h2>
+        <p class="section-subtitle">Gameplay previews from real sessions</p>
+    </div>
+
+    <div class="video-grid">
+        <div class="video-placeholder" style="border:none; padding:0;">
+            <img src="gif1.gif" alt="Gameplay Preview"
+                 style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
         </div>
-        <div class="video-grid">
-            <div class="video-placeholder triple">
-              <img src="clip1.gif">
-              <img src="clip2.gif">
-              <img src="clip3.gif">
+
+        <div class="video-placeholder" style="border:none; padding:0;">
+            <img src="gif2.gif" alt="Gameplay Preview"
+                 style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
         </div>
-            <div class="video-placeholder">How-To Tutorial Placeholder</div>
-            <div class="video-placeholder">Gameplay Demo Placeholder</div>
+
+        <div class="video-placeholder" style="border:none; padding:0;">
+            <img src="gif3.gif" alt="Gameplay Preview"
+                 style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
         </div>
-    </section>
+    </div>
+</section>
+
 
     <section class="features-section" id="features">
         <div class="section-header">
