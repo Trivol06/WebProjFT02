@@ -142,7 +142,7 @@
         }
 
         .hero-logo {
-            font-size: 28px;
+            font-size: 15px;
             font-weight: 900;
             margin-bottom: 12px;
             text-transform: uppercase;
@@ -150,7 +150,7 @@
             text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
         }
 
-        .hero-tagline {
+      /*  .hero-tagline {
             font-size: 17px;
             font-weight: 300;
             margin-bottom: 28px;
@@ -159,6 +159,13 @@
             margin-left: auto;
             margin-right: auto;
             line-height: 1;
+        }     */
+
+        .hero-tagline {
+            font-size: clamp(1.8rem, 3.5vw, 3rem);
+            font-weight: 800;     /* bold without being ugly */
+            line-height: 1.1;
+            letter-spacing: -0.02em; /* tightens it so it feels intentional */
         }
 
         .hero-cta-group {
